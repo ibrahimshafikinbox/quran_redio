@@ -47,7 +47,7 @@ class OnboardingBody extends StatelessWidget {
                             onPressed: () => _finishOnboarding(context),
                             child: Text(
                               'تخطي',
-                              style: AppTextStyles.font14RegularBlack.copyWith(
+                              style: AppTextStyle.textStyleRegularGrayLight.copyWith(
                                 color: AppColors.textGray,
                               ),
                             ),

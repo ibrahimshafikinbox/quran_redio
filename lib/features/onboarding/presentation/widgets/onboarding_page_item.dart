@@ -47,7 +47,7 @@ class OnboardingPageItem extends StatelessWidget {
             ),
             child: Text(
               data.subtitle,
-              style: AppTextStyles.font12RegularGray.copyWith(
+              style: AppTextStyle.textStyleMediumGray12.copyWith(
                 color: AppColors.primary,
                 fontWeight: FontWeight.w600,
               ),
@@ -60,7 +60,7 @@ class OnboardingPageItem extends StatelessWidget {
           Text(
             data.title,
             textAlign: TextAlign.center,
-            style: AppTextStyles.font24BoldBlack.copyWith(
+            style: AppTextStyle.textStyleBoldBlack20.copyWith(
               height: 1.4,
             ),
           ),
@@ -71,7 +71,7 @@ class OnboardingPageItem extends StatelessWidget {
           Text(
             data.description,
             textAlign: TextAlign.center,
-            style: AppTextStyles.font14MediumGray.copyWith(
+            style: AppTextStyle.textStyleRegularGray.copyWith(
               height: 1.9,
               fontWeight: FontWeight.w400,
             ),
