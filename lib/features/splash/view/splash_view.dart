@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:splash/core/colors/app_colors.dart';
-import 'package:splash/core/utils/responsive/app_screen_utils.dart';
 import 'package:splash/features/splash/widgets/splash_logo.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -56,16 +55,13 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: AppColors.primary, // Using primary as splash background
       body: FadeTransition(
         opacity: _fadeAnimation,
-        child: Center(
-          child: Padding(
-            padding: AppScreenUtils.paddingH24,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [const SplashLogo()],
-            ),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [SplashLogo()],
           ),
         ),
       ),
