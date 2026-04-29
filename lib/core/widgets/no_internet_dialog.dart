@@ -36,13 +36,13 @@ class NoInternetDialog extends StatelessWidget {
               Spacing.v16,
               Text(
                 'لا يوجد اتصال بالإنترنت',
-                style: AppTextStyles.font18SemiBoldBlack,
+                style: AppTextStyle.textStyleBoldBlack,
                 textAlign: TextAlign.center,
               ),
               Spacing.v12,
               Text(
                 'يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى',
-                style: AppTextStyles.font14MediumGray,
+                style: AppTextStyle.textStyleMediumGray,
                 textAlign: TextAlign.center,
               ),
               Spacing.v24,
@@ -59,7 +59,7 @@ class NoInternetDialog extends StatelessWidget {
                   ),
                   child: Text(
                     'إعادة المحاولة',
-                    style: AppTextStyles.font16BoldWhite,
+                    style: AppTextStyle.textStyleWhiteSemiBold,
                   ),
                 ),
               ),

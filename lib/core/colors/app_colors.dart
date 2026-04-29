@@ -5,8 +5,12 @@ class AppColors {
 
   // ── Primary Colors ──
   static const Color primary = Color(0xFF1D4A3D);
+  static const Color primaryL = Color(0xFF1D4A3D); // Added for compatibility
   static const Color primaryLight = Color(0xFF2BB14C);
   static const Color primaryDark = Color(0xFF0C541E);
+
+  // ── Secondary Colors ──
+  static const Color secondaryL = Color(0xFF707070); // Added for compatibility
 
   // ── Background Colors ──
   static const Color scaffoldBg = Color(0xFFF8F9FA);
@@ -16,6 +20,12 @@ class AppColors {
 
   // ── Text Colors ──
   static const Color textPrimary = Color(0xFF263238);
+  static const Color textAppPrimary = Color(0xFF1D4A3D); // Added
+  static const Color textAppGold = Color(0xFFB8873D); // Added
+  static const Color textAppGray = Color(0xFF707070); // Added
+  static const Color textGrayLight = Color(0xFFBDBDBD); // Added
+  static const Color textAppWhiteDark = Color(0xFFF5F5F5); // Added
+  static const Color textRed = Color(0xFFD32F2F); // Added
   static const Color textSecondary = Color(0xFF707070);
   static const Color textWhite = Color(0xFFFFFFFF);
   static const Color textBlack = Color(0xFF000000);
