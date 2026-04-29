@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran_radio/core/utils/colors/colors.dart';
-import 'package:quran_radio/core/utils/styles/app_sized_box.dart';
-import 'package:quran_radio/core/widgets/islamic_lines.dart';
-import 'package:quran_radio/feature/home/widget/home_header_actions_row.dart';
-import 'package:quran_radio/feature/home/widget/home_radio_title_widget.dart';
-import 'package:quran_radio/feature/home/widget/home_date_badge_widget.dart';
-import 'package:quran_radio/feature/home/widget/home_now_playing_widget.dart';
-import 'package:quran_radio/feature/home/widget/home_schedule_button.dart';
+import 'package:splash/core/colors/app_colors.dart';
+import 'package:splash/core/helpers/spacing.dart';
+import 'package:splash/core/widgets/islamic_lines.dart';
+import 'home_header_actions_row.dart';
+import 'home_radio_title_widget.dart';
+import 'home_date_badge_widget.dart';
+import 'home_now_playing_widget.dart';
+import 'home_schedule_button.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
   final int? sleepTimerSeconds;
@@ -30,7 +30,7 @@ class HomeHeaderWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
+        color: AppColors.primary,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(28.r),
           bottomRight: Radius.circular(28.r),
@@ -55,20 +55,20 @@ class HomeHeaderWidget extends StatelessWidget {
                     onNotificationTap: onNotificationTap,
                     onMenuTap: onMenuTap,
                   ),
-                  AppSizedBox.sizedH15,
+                  Spacing.v16,
                   const HomeRadioTitleWidget(),
-                  AppSizedBox.sizedH15,
+                  Spacing.v16,
                   const HomeDateBadgeWidget(
                     date: 'الخميس، 9 جمادى الأولى 1445 هـ',
                   ),
-                  AppSizedBox.sizedH15,
-                  const HomeNowPlayingWidget(
+                  Spacing.v16,
+                  HomeNowPlayingWidget(
                     programName: 'فى ظلال الهدى النبوى',
                     presenterName: 'مع د عبدالصمد الدسوقي',
                   ),
-                  AppSizedBox.sizedH20,
+                  Spacing.v20,
                   HomeScheduleButton(onTap: onScheduleTap),
-                  SizedBox(height: 16.h),
+                  Spacing.v16,
                 ],
               ),
             ),

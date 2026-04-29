@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran_radio/core/utils/colors/colors.dart';
-import 'package:quran_radio/core/utils/styles/app_text_style.dart';
-import 'package:quran_radio/feature/home/widget/home_category_card.dart';
-import 'package:quran_radio/feature/qiblah/view/qiblah_view.dart';
+import 'package:splash/core/colors/app_colors.dart';
+import 'package:splash/core/theme/app_text_styles.dart' show AppTextStyle;
+import 'package:splash/features/home/widget/home_category_card.dart';
+ 
 
 class HomeCategoriesSection extends StatelessWidget {
   final VoidCallback onViewAllTap;
@@ -37,7 +37,7 @@ class HomeCategoriesSectionHeader extends StatelessWidget {
         Text(
           'روائع إذاعة القرآن الكريم',
           style: AppTextStyle.textStyleBoldBlack.copyWith(
-            color: AppColors.primaryColor,
+            color: AppColors.primary,
           ),
         ),
         TextButton.icon(
@@ -45,13 +45,13 @@ class HomeCategoriesSectionHeader extends StatelessWidget {
           icon: Icon(
             Icons.arrow_forward_ios,
             size: 16.sp,
-            color: AppColors.primaryColor,
+            color: AppColors.primary,
           ),
           onPressed: onViewAllTap,
           label: Text(
             'عرض الكل',
             style: AppTextStyle.textStyleBoldBlack.copyWith(
-              color: AppColors.primaryColor,
+              color: AppColors.primary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -82,7 +82,9 @@ class HomeCategoriesGrid extends StatelessWidget {
         icon: Icons.mosque_rounded,
         screen: Scaffold(),
       ),
-      CategoryItem(title: 'القبله', icon: Icons.explore, screen: QiblahView()),
+            CategoryItem(title: 'القبله', icon: Icons.explore, screen: Scaffold()),
+// remove line comment please 
+      // CategoryItem(title: 'القبله', icon: Icons.explore, screen: QiblahView()),
     ];
 
     return GridView.builder(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran_radio/core/utils/colors/colors.dart';
+import 'package:splash/core/colors/app_colors.dart';
 
 class HomeRadioTitleWidget extends StatelessWidget {
   const HomeRadioTitleWidget({super.key});
@@ -14,6 +14,7 @@ class HomeRadioTitleWidget extends StatelessWidget {
         color: AppColors.white,
         fontSize: 18.sp,
         fontWeight: FontWeight.bold,
+        fontFamily: 'Cairo',
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran_radio/core/utils/styles/app_sized_box.dart';
+import 'package:splash/core/helpers/spacing.dart';
 
 class HomeHeaderActionsRow extends StatelessWidget {
   final int? sleepTimerSeconds;
@@ -30,7 +30,7 @@ class HomeHeaderActionsRow extends StatelessWidget {
           icon: Icons.notifications,
           onTap: onNotificationTap,
         ),
-        AppSizedBox.sizedW10,
+        Spacing.h12,
         HomeHeaderIconButton(icon: Icons.menu, onTap: onMenuTap),
       ],
     );
