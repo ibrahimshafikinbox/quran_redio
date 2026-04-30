@@ -75,7 +75,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
               Spacing.v16,
               Text(
                 'لا يوجد اتصال بالإنترنت',
-                style: AppTextStyles.font18SemiBoldBlack,
+                style: AppTextStyle.textStyleBoldBlack,
                 textAlign: TextAlign.center,
               ),
               Spacing.v24,
@@ -90,7 +90,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                 ),
                 child: Text(
                   'إعادة المحاولة',
-                  style: AppTextStyles.font16BoldWhite,
+                  style: AppTextStyle.textStyleWhiteSemiBold,
                 ),
               ),
             ],

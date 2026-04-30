@@ -6,9 +6,10 @@ import 'package:splash/core/theme/app_text_styles.dart';
 import 'package:splash/core/helpers/spacing.dart';
 import 'package:splash/core/helpers/extensions.dart';
 import 'package:splash/core/widgets/custom_button.dart';
+import 'package:splash/features/main/main_view.dart';
 import 'package:splash/features/onboarding/data/models/onboarding_model.dart' show onboardingPages;
-import '../logic/cubit/onboarding_cubit.dart';
-import '../widgets/onboarding_page_item.dart';
+import 'package:splash/features/onboarding/logic/cubit/onboarding_cubit.dart' show OnboardingCubit, OnboardingState;
+ import '../widgets/onboarding_page_item.dart';
 import '../widgets/onboarding_dots_indicator.dart';
 
 class OnboardingView extends StatelessWidget {
@@ -109,6 +110,6 @@ class OnboardingBody extends StatelessWidget {
   void _finishOnboarding(BuildContext context) {
     context.read<OnboardingCubit>().setOnboardingSeen();
     // Navigate to Home
-    context.pushReplacement(const Scaffold(body: Center(child: Text('Home Screen'))));
+    context.pushReplacement(const MainNavigationPage());
   }
 }

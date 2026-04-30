@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:splash/core/colors/app_colors.dart';
+import 'package:splash/features/main/main_view.dart';
 import 'package:splash/features/splash/widgets/splash_logo.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,15 +30,14 @@ class _SplashScreenState extends State<SplashScreen>
     );
     _fadeController.forward();
 
-    // ── 5 Second Timer ──
-    Timer(const Duration(seconds: 5), _navigateToHome);
+     Timer(const Duration(seconds: 5), _navigateToHome);
   }
-
+  // navigate to home view after 5 seconds 
   void _navigateToHome() {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         pageBuilder: (_, __, ___) =>
-            const Scaffold(body: Center(child: Text('Home Screen'))),
+             MainNavigationPage(),
         transitionDuration: const Duration(milliseconds: 600),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(opacity: animation, child: child);
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primary, // Using primary as splash background
+      backgroundColor: AppColors.primary,
       body: FadeTransition(
         opacity: _fadeAnimation,
         child: const Center(

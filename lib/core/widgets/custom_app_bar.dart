@@ -52,7 +52,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: Center(
                         child: Text(
                           title,
-                          style: AppTextStyles.font18SemiBoldBlack.copyWith(
+                          style: AppTextStyle.textStyleSemiBoldGold18.copyWith(
                             color: AppColors.white,
                           ),
                         ),

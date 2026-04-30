@@ -53,7 +53,7 @@ class AppTextStyle {
   );
   static TextStyle textStyleSemiBoldGold18 = TextStyle(
     fontFamily: "Cairo",
-    color: AppColors.primaryL,
+    color: AppColors.textAppGold,
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
@@ -124,13 +124,13 @@ class AppTextStyle {
   );
   static TextStyle textStyleMediumPrimaryNative12 = TextStyle(
     fontFamily: "Cairo",
-    color: AppColors.primaryL,
+    color: AppColors.textAppGold,
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
   static TextStyle floatingLabelStyle = TextStyle(
     fontFamily: "Cairo",
-    color: AppColors.primaryL,
+    color: AppColors.textAppGold,
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );

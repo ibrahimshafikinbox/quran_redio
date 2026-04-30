@@ -1,43 +1,65 @@
-# 🏠 Home Feature Documentation
+# 🏠 Home Feature: Detailed Documentation
 
-This folder contains the **Home** feature, which serves as the primary dashboard of the application after the user finishes the onboarding process.
-
-## 📂 Feature Structure
-
-The feature is organized following a clean, modular structure:
-
-- **`view/`**: Contains the main screen layouts.
-  - `home_view.dart`: The primary dashboard widget that assembles all components.
-- **`widget/`**: Contains small, reusable UI components specific to the Home feature.
-  - `home_header_widget.dart`: The decorative top section with Islamic patterns.
-  - `home_categories_section.dart`: A grid of different radio categories.
-  - `sleep_timer_widget.dart`: A specialized bottom sheet for the sleep timer functionality.
-  - `home_now_playing_widget.dart`: Displays the current radio program information.
+This feature serves as the primary dashboard of the Quran Radio application. It is designed to be highly modular, responsive, and strictly integrated with the application's core design system.
 
 ---
 
-## 🔍 Explanation of Commented Lines
+## 📂 Feature Architecture & Directory Breakdown
 
-To ensure the project remains buildable while other features are under development, some lines have been intentionally commented:
+### 1. `view/home_view.dart`
+The entry point of the Home feature.
+- **`HomeView` (StatefulWidget)**: Manages the high-level state of the dashboard, specifically the **Sleep Timer** logic.
+- **`_showSleepTimer()`**: An asynchronous function that opens the `SleepTimerBottomSheet`. It waits for a result (seconds) and updates the local state to trigger the timer UI.
+- **`Scaffold`**: Uses `AppColors.white` for a clean look and sets the base `Directionality` to RTL.
 
-1. **Feature Navigation**: 
-   - `// CategoryItem(..., screen: QiblahView())`: Commented because the Qiblah feature is yet to be refactored and merged into this branch. A `Scaffold()` placeholder is used instead for now.
-2. **Callback Logic**:
-   - `// onCategoryTap: (String category) {}`: Left as a comment in the categories section to be implemented once the detailed category views are ready.
-3. **Data Placeholders**:
-   - Some static data (like dates) are currently hardcoded but are structured to be replaced by dynamic data from a Cubit or Repository later.
+### 2. `widget/` (Modular UI Components)
+
+#### 🏛️ `home_header_widget.dart`
+- **Purpose**: Displays the top section with a custom curved background.
+- **Implementation**: Uses `CustomPaint` with `IslamicCurvedLinesPainter` to render traditional Islamic patterns dynamically.
+- **Integration**: Combines `HomeHeaderActionsRow`, `HomeRadioTitleWidget`, and `HomeNowPlayingWidget` into a cohesive header unit.
+
+#### 🔔 `home_header_actions_row.dart`
+- **Logic**: Handles the top buttons (Menu, Notifications, and Sleep Timer).
+- **UI**: The timer icon changes appearance (`isActive`) if a sleep timer is currently running, giving the user immediate visual feedback.
+
+#### 📻 `home_now_playing_widget.dart`
+- **Content**: Displays the name of the current program and the presenter.
+- **Styling**: Uses `AppTextStyle.textStyleWhiteSemiBold` to ensure readability against the dark green primary background.
+
+#### 📅 `home_date_badge_widget.dart`
+- **Design**: A subtle, semi-transparent capsule that displays the Hijri date.
+- **Colors**: Uses `AppColors.white.withOpacity(0.12)` to maintain a premium "glassmorphism" aesthetic.
+
+#### 📑 `home_categories_section.dart` & `home_category_card.dart`
+- **Grid System**: Uses `GridView.builder` with a `SliverGridDelegate` for a responsive 2-column layout.
+- **Logic**: Maps a list of `CategoryItem` objects to UI cards.
+- **Styling**: The cards use `AppColors.beige` for the icon background and `AppColors.goldText` for the icons, matching the overall color palette.
+
+#### ⏲️ `sleep_timer_widget.dart`
+- **Logic**: A complex widget managing duration selection.
+- **Presets**: Includes quick-select buttons for 30m, 1.5h, and 2h.
+- **Custom Picker**: Uses `ListWheelScrollView` to create a smooth, native-feeling time picker for Hours, Minutes, and Seconds.
+- **Data Flow**: When "Start Timer" is clicked, it calculates total seconds and returns it via `Navigator.pop(context, totalSeconds)`.
 
 ---
 
-## 🛠️ Technical Details
+## 🎨 Design System & Color Logic
 
-### 1. Theming & Styling
-The Home feature is fully integrated with the **Core Design System**:
-- **Colors**: Uses `AppColors.primary` and `AppColors.white`.
-- **Typography**: Strictly follows `AppTextStyle` (e.g., `textStyleBoldBlack`, `textStyleWhiteMedium`).
-- **Spacing**: Uses the centralized `Spacing` helper (e.g., `Spacing.v16`, `Spacing.h12`) to maintain a consistent layout grid.
+All components in this feature strictly utilize the **Centralized Design System** located in `lib/core/`:
 
-### 2. Responsiveness
-All dimensions are handled via `flutter_screenutil` using `.w`, `.h`, and `.sp` extensions to ensure the dashboard looks premium on all screen sizes.
+- **Colors (`AppColors`)**:
+  - `primary`: Used for headers and main buttons.
+  - `goldText` & `beige`: Used for category cards to provide a warm, premium feel.
+  - `textPrimary`: Used for main body text to ensure high contrast and readability.
+- **Typography (`AppTextStyle`)**: Every `Text` widget uses a predefined style from the core layer to ensure font consistency (Cairo) across the app.
+- **Spacing (`Spacing`)**: Instead of hardcoded `SizedBox`, we use `Spacing.v16`, `Spacing.h12`, etc., to maintain a perfect layout grid.
+
+---
+
+## 🔍 Note on Commented Code
+
+- **Feature Placeholders**: Navigation to screens like `QiblahView` or `QuranPageView` is currently commented or uses `Scaffold()` because those features are being refactored in separate branches to match this new modular structure.
+- **Future Integration**: The logic is already prepared for `Cubit` integration; once the radio service is ready, the hardcoded program names in `HomeNowPlayingWidget` will be replaced with dynamic state streams.
 
 ---

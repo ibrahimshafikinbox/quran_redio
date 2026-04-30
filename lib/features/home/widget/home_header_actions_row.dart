@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:splash/core/helpers/spacing.dart';
+import 'package:splash/core/colors/app_colors.dart';
 
 class HomeHeaderActionsRow extends StatelessWidget {
   final int? sleepTimerSeconds;
@@ -56,10 +57,10 @@ class HomeHeaderIconButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(8.w),
         decoration: BoxDecoration(
-          color: isActive ? Colors.white.withOpacity(0.2) : Colors.transparent,
+          color: isActive ? AppColors.white.withOpacity(0.2) : Colors.transparent,
           borderRadius: BorderRadius.circular(8.r),
         ),
-        child: Icon(icon, color: Colors.white, size: 24.sp),
+        child: Icon(icon, color: AppColors.white, size: 24.sp),
       ),
     );
   }

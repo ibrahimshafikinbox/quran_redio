@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:splash/core/colors/app_colors.dart';
 
 class SleepTimerBottomSheet extends StatefulWidget {
   const SleepTimerBottomSheet({super.key});
@@ -70,7 +71,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(24.r),
           topRight: Radius.circular(24.r),
@@ -85,7 +86,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
             width: 40.w,
             height: 4.h,
             decoration: BoxDecoration(
-              color: Colors.grey[300],
+              color: AppColors.textSecondary.withOpacity(0.2),
               borderRadius: BorderRadius.circular(2.r),
             ),
           ),
@@ -96,7 +97,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
+              color: AppColors.textPrimary,
             ),
           ),
           SizedBox(height: 20.h),
@@ -128,11 +129,11 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
                 padding: EdgeInsets.symmetric(vertical: 12.h),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? const Color(0xFF1D4A3D)
+                      ? AppColors.primary
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(25.r),
                   border: Border.all(
-                    color: const Color(0xFF1D4A3D),
+                    color: AppColors.primary,
                     width: 1.5,
                   ),
                 ),
@@ -143,8 +144,8 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w500,
                       color: isSelected
-                          ? Colors.white
-                          : const Color(0xFF1D4A3D),
+                          ? AppColors.white
+                          : AppColors.primary,
                     ),
                   ),
                 ),
@@ -222,7 +223,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: Colors.grey[600],
+            color: AppColors.textSecondary,
           ),
         ),
         SizedBox(height: 8.h),
@@ -235,7 +236,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
                   height: 50.h,
                   margin: EdgeInsets.symmetric(horizontal: 8.w),
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: AppColors.scaffoldBg,
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
@@ -257,7 +258,7 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
                         style: TextStyle(
                           fontSize: 28.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black87,
+                          color: AppColors.textPrimary,
                         ),
                       ),
                     );
@@ -284,20 +285,20 @@ class _SleepTimerBottomSheetState extends State<SleepTimerBottomSheet> {
           width: double.infinity,
           padding: EdgeInsets.symmetric(vertical: 14.h),
           decoration: BoxDecoration(
-            color: const Color(0xFF1D4A3D),
+            color: AppColors.primary,
             borderRadius: BorderRadius.circular(30.r),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.alarm, color: Colors.white, size: 22.sp),
+              Icon(Icons.alarm, color: AppColors.white, size: 22.sp),
               SizedBox(width: 10.w),
               Text(
                 'بدأ التوقيت',
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: AppColors.white,
                 ),
               ),
             ],

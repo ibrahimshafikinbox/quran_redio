@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:splash/core/colors/app_colors.dart';
 
 class HomeCategoryCard extends StatelessWidget {
   final String title;
@@ -19,11 +20,11 @@ class HomeCategoryCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(14.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: AppColors.black.withOpacity(0.05),
               blurRadius: 5,
               offset: const Offset(0, 3),
             ),
@@ -52,10 +53,10 @@ class HomeCategoryIconContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
-        color: const Color(0xFFF5F0E8),
+        color: AppColors.beige,
         borderRadius: BorderRadius.circular(12.r),
       ),
-      child: Icon(icon, color: const Color(0xFF9D8B6E), size: 28.sp),
+      child: Icon(icon, color: AppColors.goldText, size: 28.sp),
     );
   }
 }
@@ -70,7 +71,7 @@ class HomeCategoryTitle extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        color: Colors.black87,
+        color: AppColors.textPrimary,
         fontSize: 14.sp,
         fontWeight: FontWeight.w500,
       ),

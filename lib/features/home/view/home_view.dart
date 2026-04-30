@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran_radio/core/utils/colors/colors.dart';
-import 'package:quran_radio/core/utils/styles/app_sized_box.dart';
-import 'package:quran_radio/feature/home/widget/home_header_widget.dart';
-import 'package:quran_radio/feature/home/widget/home_categories_section.dart';
-import 'package:quran_radio/feature/home/widget/sleep_timer_widget.dart';
+import 'package:splash/core/colors/app_colors.dart' show AppColors;
+import 'package:splash/core/helpers/spacing.dart';
+import 'package:splash/features/home/widget/home_categories_section.dart' show HomeCategoriesSection;
+import 'package:splash/features/home/widget/home_header_widget.dart' show HomeHeaderWidget;
+import 'package:splash/features/home/widget/sleep_timer_widget.dart' show SleepTimerBottomSheet;
+ 
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -35,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    AppSizedBox.sizedH15,
+                    Spacing.h16,
                     HomeCategoriesSection(
                       onViewAllTap: () {},
                       // onCategoryTap: (String category) {},

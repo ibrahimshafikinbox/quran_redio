@@ -4,9 +4,9 @@ class AppColors {
   AppColors._();
 
   // ── Primary Colors ──
+ 
   static const Color primary = Color(0xFF1D4A3D);
-  static const Color primaryL = Color(0xFF1D4A3D); // Added for compatibility
-  static const Color primaryLight = Color(0xFF2BB14C);
+   static const Color primaryLight = Color(0xFF2BB14C);
   static const Color primaryDark = Color(0xFF0C541E);
 
   // ── Secondary Colors ──
@@ -47,4 +47,6 @@ class AppColors {
 
   // ── Decorative ──
   static const Color gold = Color(0xFFB8873D);
+  static const Color beige = Color(0xFFF5F0E8);
+  static const Color goldText = Color(0xFF9D8B6E);
 }
