@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:splash/core/widgets/custom_bottom_navbar.dart' show CustomBottomNavBar;
 import 'package:splash/features/home/view/home_view.dart';
-  
+import 'package:splash/features/settings/view/settings_view.dart';
 
 class MainNavigationPage extends StatefulWidget {
   const MainNavigationPage({super.key});
@@ -14,8 +14,6 @@ class MainNavigationPage extends StatefulWidget {
 class _MainNavigationPageState extends State<MainNavigationPage> {
   int currentIndex = 0;
 
-  // final GlobalKey<QuranPageViewState> _quranPageKey = GlobalKey();
-
   static const int _quranTabIndex = 1;
 
   late final List<Widget> pages;
@@ -25,11 +23,10 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
     super.initState();
     pages = [
       const HomeView(),
-      // QuranPageView(key: _quranPageKey),
-
-      // const CitiesSelectionView(),
-      // const PrayerTimesScreen(),
-      // const SettingsView(),
+      const Scaffold(body: Center(child: Text('المصحف - قريباً'))),
+      const Scaffold(body: Center(child: Text('بث مباشر - قريباً'))),
+      const Scaffold(body: Center(child: Text('الصلاة - قريباً'))),
+      const SettingsView(),
     ];
   }
 
